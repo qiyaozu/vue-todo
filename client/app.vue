@@ -6,7 +6,9 @@
     <router-link to="login">login</router-link>
 
     <!-- <Todo></Todo> -->
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
     <Footer></Footer>
   </div>
 </template>
