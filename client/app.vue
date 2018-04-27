@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="cover"></div>
+    <div id="cover">fjalsjdflajf</div>
     <Header></Header>
     <todo></todo>
     <Footer></Footer>
