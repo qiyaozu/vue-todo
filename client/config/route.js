@@ -8,7 +8,7 @@ export default () => {
     linkActiveClass: 'active-link',
     linkExactActiveClass: 'exact-active-link',
     scrollBehavior (to, from, savedPosition) {
-      if (savedPosition) {
+      if (savedPosition) { // 如果有滚动行为
         return savedPosition
       } else {
         return { x: 0, y: 0 }

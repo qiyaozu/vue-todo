@@ -28,7 +28,7 @@ const devServer = {
     errors: true
   },
   historyApiFallback: {
-    index: 'public/index.html'
+    index: '/public/index.html' // 注：public前面的/必须要有
   },
   hot: true
 }
@@ -103,7 +103,5 @@ if (isDev) {
     ])
   })
 }
-
-
 
 module.exports = config
