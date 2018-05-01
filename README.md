@@ -14,3 +14,8 @@ npm install
 npm run dev
 ```
 开始开发项目
+
+# vue-meta        https://www.npmjs.com/package/vue-meta
+# koa-router      https://www.npmjs.com/package/koa-router
+# nodemon         监听文件的改动，重启node服务
+# concurrently    同时执行多个node命令

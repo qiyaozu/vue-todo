@@ -2,5 +2,18 @@
 export default {
   updateCount (state, num) {
     state.count = num
+  },
+  fillTodos (state, data) {
+    state.todos = data
+  },
+  doLogin (state, userInfo) {
+    state.userInfo = userInfo
+  },
+  updateTodo (state, obj) {
+    state.todos.splice(
+      state.todos.findIndex(t => t.id === obj.id),
+      1,
+      obj.data
+    )
   }
 }

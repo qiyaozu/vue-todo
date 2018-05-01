@@ -2,9 +2,11 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <p>{{fullName}} {{count}} {{testA}}</p>
-    <router-link to="app">app</router-link>
-    <router-link to="login">login</router-link>
+    <!-- <p>{{fullName}} {{count}}  -->
+      <!-- {{testA}} -->
+    <!-- </p> -->
+    <!-- <router-link to="app">app</router-link>
+    <router-link to="login">login</router-link> -->
 
     <!-- <Todo></Todo> -->
     <transition name="fade">
@@ -33,10 +35,10 @@ export default {
     // 下面这种方式更利于修改数据
     ...mapState({
       count: (state) => state.count + 5
-    }),
-    testA () {
-      return this.$store.state.a.text
-    }
+    })
+    // testA () {
+    //   return this.$store.state.a.text
+    // }
   },
   created () {
     this.updateAsync({
