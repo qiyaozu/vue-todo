@@ -5,7 +5,7 @@
       class="add-input"
       autofocus="autofocus"
       placeholder="接下去要做什么？"
-      @keyup.enter="addTodo"
+      @keyup.enter="handleAdd"
     >
     <item
       :todo="todo"
@@ -26,7 +26,7 @@
 import { mapState, mapActions } from 'vuex'
 import Item from './item.vue'
 import Tabs from './tabs.vue'
-let id = 0
+
 export default {
   metaInfo: {
     title: 'todo'
@@ -54,16 +54,16 @@ export default {
     this.fetchTodos()
   },
   methods: {
-    ...mapActions(['fetchTodos']),
-    addTodo (e) {
-      if (e.target.value.trim()) {
-        this.todos.unshift({
-          id: id++,
-          content: e.target.value.trim(),
-          completed: false
-        })
-        e.target.value = ''
+    ...mapActions(['fetchTodos', 'addTodo', 'deleteTodo']),
+    handleAdd (e) {
+      let content = e.target.value.trim()
+      if (!content) return
+      const todo = {
+        content,
+        completed: false
       }
+      this.addTodo(todo)
+      e.target.value = ''
     },
     deleteTodo (id) {
       this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)

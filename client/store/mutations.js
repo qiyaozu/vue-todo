@@ -15,5 +15,11 @@ export default {
       1,
       obj.data
     )
+  },
+  addTodo (state, data) {
+    state.todos.push(data)
+  },
+  deleteTodo (state, id) {
+    state.todos = state.todos.forEach(item => item.id !== id)
   }
 }

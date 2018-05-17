@@ -36,10 +36,22 @@ export default {
         })
     })
   },
+  addTodo ({ commit }, data) {
+    return model.createTodo(data)
+      .then(_data => {
+        commit('addTodo', data)
+      })
+  },
   updateTodo ({ commit }, { id, data }) {
     return model.updateTodo(id, data)
       .then(data => {
         commit('updateTodo', {id, data})
+      })
+  },
+  deleteTodo ({ commit }, id) {
+    return model.deleteTodo(id)
+      .then(data => {
+        commit('deleteTodo', id)
       })
   }
 }

@@ -16,7 +16,6 @@ Vue.use(meta)
 export default () => {
   const router = createRouter()
   const store = createStore()
-
   const app = new Vue({
     router,
     store,
